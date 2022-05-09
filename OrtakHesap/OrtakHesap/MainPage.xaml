@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrtakHesap.MainPage"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:ortakHesap="clr-namespace:OrtakHesap;assembly=OrtakHesap">
+
+    <StackLayout>
+        <yummy:PancakeView WidthRequest="100" BackgroundColor="#2EC7A2" Padding="0,0,0,50" CornerRadius="0,0,100,100"
+                           VerticalOptions="Start">
+
+            <StackLayout>
+                <Label Text="Ortak Hesap" Padding="40,45,0,0" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
+                    <Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="White"
+                            FontSize="12" FontAttributes="None" BackgroundColor="#59E7C4" HorizontalOptions="Start">
+                    </Button>
+                    <Button Text="Harcamalar" Padding="15,0" HeightRequest="20" TextColor="White"
+                            FontSize="12" FontAttributes="None" BackgroundColor="#2EC7A2" HorizontalOptions="Start">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </yummy:PancakeView>
+        <yummy:PancakeView BackgroundColor="#A1B52C" Margin="0,-85,0,0" WidthRequest="320"
+                           HorizontalOptions="Center" CornerRadius="20" Padding="0,0,0,20">
+            <StackLayout>
+                <Label Text="Harcama Özeti" Padding="25,20,0,0" TextColor="White" FontSize="14" FontAttributes="Bold"></Label>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                    <Frame HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="20,0,0,0" CornerRadius="15">
+                        <StackLayout>
+                            <Label Text="Toplam Harcama" FontSize="12" HorizontalTextAlignment="Center"
+                                   TextColor="#5C5C5C">
+                            </Label>
+                            <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"
+                                   TextColor="Black">
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HorizontalOptions="FillAndExpand" Margin="0,0,20,0" CornerRadius="15">
+                        <StackLayout>
+                            <Label Text="Toplam Harcama" FontSize="12" HorizontalTextAlignment="Center"
+                                   TextColor="#5C5C5C">
+                            </Label>
+                            <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"
+                                   TextColor="Black">
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </yummy:PancakeView>
+        <Label Text="Alışverişler" Margin="45,15,0,0" TextColor="#5C5C5C"></Label>
+        <ListView  VerticalOptions="EndAndExpand" x:Name="EmployeeView" HorizontalOptions="Center" WidthRequest="330" >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="ortakHesap:Expense">
+                    <ViewCell>
+                        <Frame Padding="2">
+                           <StackLayout Orientation="Horizontal" >
+                               <Frame WidthRequest="5"  BackgroundColor="Gray" ></Frame>
+                                <StackLayout>
+                                    <Label Text="{Binding Name }"  TextColor="Black"></Label>
+                                    <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}' }"  TextColor="#5C5C5C"></Label>
+                                </StackLayout>
+                                <Label Text="{Binding Amount ,StringFormat=' {0:F0} TL' }" HorizontalOptions="EndAndExpand" Margin="0,0,20,0"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+ 
+        </ListView>
+        <Frame HeightRequest="40" BackgroundColor="White" Margin="0,0,0,-6">
+            <StackLayout Orientation="Horizontal">
+                <Button Text="+" HorizontalOptions="EndAndExpand" BackgroundColor="#D7D7D7" TextColor="#5C5C5C" FontAttributes="Bold" CornerRadius="20" Padding="0,0" WidthRequest="40" HeightRequest="40" FontSize="20"></Button>
+                <Label Text="Harcama Ekle"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"></Label>
+            </StackLayout>
+        </Frame>
+        <Frame HeightRequest="25" BackgroundColor="#2EC7A2" Margin="0">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout  HorizontalOptions="EndAndExpand">
+                    <Label Text="Anasayfa"></Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label Text="Ayarlar"></Label>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+
+    </StackLayout>
+
+
+</ContentPage>
