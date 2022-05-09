@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="OrtakHesap.SettingsPage">
+    <StackLayout>
+        <yummy:PancakeView WidthRequest="100" BackgroundColor="{Binding BaseColor }" Padding="0,0,0,25"
+                           CornerRadius="0,0,50,50"
+                           VerticalOptions="Start">
+
+            <StackLayout>
+                <Label Text="Ayarlar" Padding="40,45,0,0" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold"></Label>
+            </StackLayout>
+        </yummy:PancakeView>
+        <Label Text="Renk Teması" TextColor="#000000" Margin="50,20,0,0"></Label>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="ButtonColor1" BackgroundColor="#2EC7A2" WidthRequest="40" HeightRequest="40"
+                    CornerRadius="20" Margin="40,10,0,0" Clicked="ChangeBaseColor">
+            </Button>
+            <Button x:Name="ButtonColor2" BackgroundColor="#7B61FF" WidthRequest="40" HeightRequest="40"
+                    CornerRadius="20" Margin="0,10,0,0" Clicked="ChangeBaseColor">
+            </Button>
+            <Button x:Name="ButtonColor3" BackgroundColor="#3270BA" WidthRequest="40" HeightRequest="40"
+                    CornerRadius="20" Margin="0,10,0,0" Clicked="ChangeBaseColor">
+            </Button>
+        </StackLayout>
+        <Label Text="Kişi Sayısı" TextColor="#000000" Margin="50,20,0,0"></Label>
+        <Entry Text="" Placeholder="Bölünecek Kişi Sayısı ..." Margin="50,20,50,0"></Entry>
+        <Button Text="Kaydet" BackgroundColor="{Binding BaseColor}" WidthRequest="200" HorizontalOptions="Center"
+                CornerRadius="50"
+                Margin="0,15,0,0" TextColor="#FFFFFF">
+        </Button>
+
+        <Frame HeightRequest="10" BackgroundColor="{Binding BaseColor }" Margin="0" VerticalOptions="EndAndExpand">
+            <StackLayout Orientation="Horizontal" Padding="75,0">
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                    <Image Source="home.png">
+                    </Image>
+                    <Label Text="Anasayfa" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenMainPage" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                    <Image Source="config.png">
+                    </Image>
+                    <Label Text="Ayarlar" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenSettings" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+
+    </StackLayout>
+
+</ContentPage>

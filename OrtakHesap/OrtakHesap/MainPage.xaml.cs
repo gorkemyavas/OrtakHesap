@@ -6,11 +6,11 @@ namespace OrtakHesap
 {
     public partial class MainPage : ContentPage
     {
+        public App CurrentApp;
         public MainPage()
         {
-
+            CurrentApp = Application.Current as App;
             InitializeComponent();
-            var a = new ListView();
 
             var people = new List<Expense>();
             for (int i = 1; i < 29; i++)
@@ -23,7 +23,20 @@ namespace OrtakHesap
                 });
             }
             EmployeeView.ItemsSource = people;
-            //Content = a;
+        }
+
+        private void OpenSettings(object sender, EventArgs e)
+        {
+            CurrentApp.OpenSettingsPage();
+        }
+        private void OpenToDoPage(object sender, EventArgs e)
+        {
+            CurrentApp.OpenToDoPage();
+        }
+
+        private void OpenMainPage(object sender, EventArgs e)
+        {
+            CurrentApp.OpenMainPage();
         }
     }
 

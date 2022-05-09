@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="OrtakHesap.ToDoPage">
+    <StackLayout>
+        <yummy:PancakeView WidthRequest="100" BackgroundColor="{Binding BaseColor }" Padding="0,0,0,25"
+                           CornerRadius="0,0,50,50"
+                           VerticalOptions="Start">
+
+            <StackLayout>
+                <Label Text="Ayarlar" Padding="40,45,0,0" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold"></Label>
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
+                    <Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
+                            FontSize="12" FontAttributes="None" BackgroundColor="{Binding BaseColor }" HorizontalOptions="Start" Clicked="OpenMainPage">
+                    </Button>
+                    <Button Text="Yapılacaklar" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
+                            FontSize="12" FontAttributes="None" BackgroundColor="{Binding ThirdColor }" HorizontalOptions="Start" Clicked="OpenToDoPage">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </yummy:PancakeView>
+       
+
+        <Frame HeightRequest="10" BackgroundColor="{Binding BaseColor }" Margin="0" VerticalOptions="EndAndExpand">
+            <StackLayout Orientation="Horizontal" Padding="75,0">
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                    <Image Source="home.png">
+                    </Image>
+                    <Label Text="Anasayfa" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenMainPage" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                    <Image Source="config.png">
+                    </Image>
+                    <Label Text="Ayarlar" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenSettings" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+
+    </StackLayout>
+</ContentPage>
