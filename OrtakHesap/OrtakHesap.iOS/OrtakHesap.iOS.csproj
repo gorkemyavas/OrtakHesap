@@ -133,4 +133,10 @@
       <Name>OrtakHesap</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\config.png" />
+  </ItemGroup>
 </Project>

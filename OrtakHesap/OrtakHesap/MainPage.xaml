@@ -11,12 +11,12 @@
                            VerticalOptions="Start">
 
             <StackLayout>
-                <Label Text="Ortak Hesap" Padding="40,45,0,0" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                <Label Text="Ortak Hesap" Padding="40,45,0,0" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold"></Label>
                 <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
-                    <Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="White"
+                    <Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
                             FontSize="12" FontAttributes="None" BackgroundColor="#59E7C4" HorizontalOptions="Start">
                     </Button>
-                    <Button Text="Harcamalar" Padding="15,0" HeightRequest="20" TextColor="White"
+                    <Button Text="Harcamalar" Padding="15,0" HeightRequest="20" TextColor="#FFFFFF"
                             FontSize="12" FontAttributes="None" BackgroundColor="#2EC7A2" HorizontalOptions="Start">
                     </Button>
                 </StackLayout>
@@ -25,7 +25,7 @@
         <yummy:PancakeView BackgroundColor="#A1B52C" Margin="0,-85,0,0" WidthRequest="320"
                            HorizontalOptions="Center" CornerRadius="20" Padding="0,0,0,20">
             <StackLayout>
-                <Label Text="Harcama Özeti" Padding="25,20,0,0" TextColor="White" FontSize="14" FontAttributes="Bold"></Label>
+                <Label Text="Harcama Özeti" Padding="25,20,0,0" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold"></Label>
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
                     <Frame HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="20,0,0,0" CornerRadius="15">
                         <StackLayout>
@@ -33,7 +33,7 @@
                                    TextColor="#5C5C5C">
                             </Label>
                             <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"
-                                   TextColor="Black">
+                                   TextColor="#000000">
                             </Label>
                         </StackLayout>
                     </Frame>
@@ -43,7 +43,7 @@
                                    TextColor="#5C5C5C">
                             </Label>
                             <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"
-                                   TextColor="Black">
+                                   TextColor="#000000">
                             </Label>
                         </StackLayout>
                     </Frame>
@@ -59,7 +59,7 @@
                            <StackLayout Orientation="Horizontal" >
                                <Frame WidthRequest="5"  BackgroundColor="Gray" ></Frame>
                                 <StackLayout>
-                                    <Label Text="{Binding Name }"  TextColor="Black"></Label>
+                                    <Label Text="{Binding Name }"  TextColor="#000000"></Label>
                                     <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}' }"  TextColor="#5C5C5C"></Label>
                                 </StackLayout>
                                 <Label Text="{Binding Amount ,StringFormat=' {0:F0} TL' }" HorizontalOptions="EndAndExpand" Margin="0,0,20,0"></Label>
@@ -70,19 +70,23 @@
                 </ListView.ItemTemplate>
  
         </ListView>
-        <Frame HeightRequest="40" BackgroundColor="White" Margin="0,0,0,-6">
+        <Frame HeightRequest="40" BackgroundColor="#FFFFFF" Margin="0,0,0,-6">
             <StackLayout Orientation="Horizontal">
                 <Button Text="+" HorizontalOptions="EndAndExpand" BackgroundColor="#D7D7D7" TextColor="#5C5C5C" FontAttributes="Bold" CornerRadius="20" Padding="0,0" WidthRequest="40" HeightRequest="40" FontSize="20"></Button>
-                <Label Text="Harcama Ekle"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label Text="Harcama Ekle"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="#000000"></Label>
             </StackLayout>
         </Frame>
-        <Frame HeightRequest="25" BackgroundColor="#2EC7A2" Margin="0">
-            <StackLayout Orientation="Horizontal">
-                <StackLayout  HorizontalOptions="EndAndExpand">
-                    <Label Text="Anasayfa"></Label>
+        <Frame HeightRequest="10" BackgroundColor="#2EC7A2" Margin="0"  >
+            <StackLayout Orientation="Horizontal" Padding="75,0" >
+                <StackLayout  HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                    <Image Source="home.png" >
+                    </Image>
+                    <Label Text="Anasayfa" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
                 </StackLayout>
-                <StackLayout HorizontalOptions="StartAndExpand">
-                    <Label Text="Ayarlar"></Label>
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                    <Image Source="config.png">
+                    </Image>
+                    <Label Text="Ayarlar" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
                 </StackLayout>
             </StackLayout>
         </Frame>
