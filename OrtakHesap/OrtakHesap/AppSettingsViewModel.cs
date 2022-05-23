@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace OrtakHesap
 {
-    public class BaseColorViewModel : INotifyPropertyChanged
+    public class AppSettingsViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -46,6 +46,19 @@ namespace OrtakHesap
                 {
                     thirdColor = value;
                     OnPropertyChanged(nameof(ThirdColor));
+                }
+            }
+        }
+        private int personCount = 3;
+        public int PersonCount
+        {
+            get => personCount;
+            set
+            {
+                if (personCount != value)
+                {
+                    personCount = value;
+                    OnPropertyChanged(nameof(PersonCount));
                 }
             }
         }

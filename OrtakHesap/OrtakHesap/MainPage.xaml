@@ -4,105 +4,109 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OrtakHesap.MainPage"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:ortakHesap="clr-namespace:OrtakHesap;assembly=OrtakHesap">
+             xmlns:ortakHesap="clr-namespace:OrtakHesap;assembly=OrtakHesap"
+             xmlns:models="clr-namespace:OrtakHesap.Models;assembly=OrtakHesap">
 
     <!--<ContentPage.BindingContext>
         <ortakHesap:BaseColorViewModel></ortakHesap:BaseColorViewModel>
     </ContentPage.BindingContext>-->
-    <StackLayout>
-        <yummy:PancakeView WidthRequest="100"  BackgroundColor="{Binding BaseColor }" Padding="0,0,0,25" CornerRadius="0,0,50,50"
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <yummy:PancakeView WidthRequest="100"  BackgroundColor="{Binding BaseColor }" Padding="0,0,0,25" CornerRadius="0,0,50,50"
                            VerticalOptions="Start">
 
-            <StackLayout>
-                <Label Text="Ortak Hesap" Padding="40,45,0,0" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold"></Label>
-                <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
-                    <Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
+                <StackLayout>
+                    <Label Text="Ortak Hesap" Padding="40,45,0,0" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold"></Label>
+                    <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
+                        <!--<Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
                             FontSize="12" FontAttributes="None" BackgroundColor="{Binding ThirdColor }" HorizontalOptions="Start">
-                    </Button>
-                    <Button Text="Yapılacaklar" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
+                        </Button>
+                        <Button Text="Yapılacaklar" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
                             FontSize="12" FontAttributes="None" BackgroundColor="{Binding BaseColor }" HorizontalOptions="Start" Clicked="OpenToDoPage">
-                    </Button>
+                        </Button>-->
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-        </yummy:PancakeView>
+            </yummy:PancakeView>
 
-        <yummy:PancakeView BackgroundColor="{Binding SecondColor }" Margin="0,-65,0,0" WidthRequest="320"
+            <yummy:PancakeView BackgroundColor="{Binding SecondColor }" Margin="0,-65,0,0" WidthRequest="320"
                            HorizontalOptions="Center" CornerRadius="20" Padding="0,0,0,20">
-            <StackLayout>
-                <Label Text="Harcama Özeti" Padding="25,20,0,0" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold"></Label>
-                <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
-                    <Frame HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="20,0,0,0" CornerRadius="15">
-                        <StackLayout>
-                            <Label Text="Toplam Harcama" FontSize="12" HorizontalTextAlignment="Center"
+                <StackLayout>
+                    <Label Text="Harcama Özeti" Padding="25,20,0,0" TextColor="#FFFFFF" FontSize="14" FontAttributes="Bold"></Label>
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                    <Frame HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="20,0,0,0" CornerRadius="15" WidthRequest="50">
+                            <StackLayout>
+                                <Label Text="Toplam Harcama" FontSize="12" HorizontalTextAlignment="Center"
                                    TextColor="#5C5C5C">
-                            </Label>
-                            <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"
+                                </Label>
+                                <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" x:Name="TotalExpenseLabel"
                                    TextColor="#000000">
-                            </Label>
-                        </StackLayout>
-                    </Frame>
-                    <Frame HorizontalOptions="FillAndExpand" Margin="0,0,20,0" CornerRadius="15">
-                        <StackLayout>
-                            <Label Text="Toplam Harcama" FontSize="12" HorizontalTextAlignment="Center"
-                                   TextColor="#5C5C5C">
-                            </Label>
-                            <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"
-                                   TextColor="#000000">
-                            </Label>
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
-            </StackLayout>
-        </yummy:PancakeView>
-        <Label Text="Alışverişler" Margin="45,15,0,0" TextColor="#5C5C5C"></Label>
-        <ListView  VerticalOptions="EndAndExpand" x:Name="EmployeeView" HorizontalOptions="Center" WidthRequest="330" >
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="ortakHesap:Expense">
-                    <ViewCell>
-                        <Frame Padding="2">
-                           <StackLayout Orientation="Horizontal" >
-                               <Frame WidthRequest="5"  BackgroundColor="Gray" ></Frame>
-                                <StackLayout>
-                                    <Label Text="{Binding Name }"  TextColor="#000000"></Label>
-                                    <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}' }"  TextColor="#5C5C5C"></Label>
-                                </StackLayout>
-                                <Label Text="{Binding Amount ,StringFormat=' {0:F0} TL' }" HorizontalOptions="EndAndExpand" Margin="0,0,20,0"></Label>
+                                </Label>
                             </StackLayout>
                         </Frame>
-                    </ViewCell>
+                        <Frame HorizontalOptions="FillAndExpand" Margin="0,0,20,0" CornerRadius="15" WidthRequest="50">
+                            <StackLayout>
+                                <Label Text="Kişi Başı" FontSize="12" HorizontalTextAlignment="Center"
+                                   TextColor="#5C5C5C">
+                                </Label>
+                                <Label Text="3456 TL" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" x:Name="PersonExpenseLabel"
+                                   TextColor="#000000">
+                                </Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </yummy:PancakeView>
+            <Label Text="Alışverişler" Margin="45,15,0,0" TextColor="#5C5C5C"></Label>
+            <ListView  VerticalOptions="EndAndExpand" x:Name="EmployeeView" HorizontalOptions="Center" WidthRequest="330" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ExpenseModel">
+                        <ViewCell>
+                            <Frame Padding="2">
+                                <StackLayout Orientation="Horizontal" >
+                                <Image Source="{Binding Image}"  ></Image>
+
+                                <StackLayout>
+                                        <Label Text="{Binding Name }"  TextColor="#000000"></Label>
+                                        <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}' }"  TextColor="#5C5C5C"></Label>
+                                    </StackLayout>
+                                    <Label Text="{Binding Amount ,StringFormat=' {0:F0} TL' }" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,0,0"></Label>
+                                    <Button Text="Sil" Clicked="DeleteExpense" BindingContext="{Binding Id}" Padding="0" WidthRequest="50"></Button>
+                            </StackLayout>
+                            </Frame>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
- 
-        </ListView>
-        <Frame HeightRequest="40" BackgroundColor="#FFFFFF" Margin="0,0,0,-6">
-            <StackLayout Orientation="Horizontal">
-                <Button Text="+" HorizontalOptions="EndAndExpand" BackgroundColor="#D7D7D7" TextColor="#5C5C5C" FontAttributes="Bold" CornerRadius="20" Padding="0,0" WidthRequest="40" HeightRequest="40" FontSize="20"></Button>
-                <Label Text="Harcama Ekle"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="#000000"></Label>
-            </StackLayout>
-        </Frame>
-        <Frame HeightRequest="10" BackgroundColor="{Binding BaseColor }" Margin="0"  >
-            <StackLayout Orientation="Horizontal" Padding="75,0" >
-                <StackLayout  HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
-                    <Image Source="home.png" >
-                    </Image>
-                    <Label Text="Anasayfa" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OpenMainPage" NumberOfTapsRequired="1"/>
-                    </StackLayout.GestureRecognizers>
+
+            </ListView>
+            <Frame HeightRequest="40" BackgroundColor="#FFFFFF" Margin="0,0,0,-6">
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="+" HorizontalOptions="EndAndExpand" BackgroundColor="#D7D7D7" TextColor="#5C5C5C" FontAttributes="Bold" CornerRadius="20" Padding="0,0" WidthRequest="40" HeightRequest="40" FontSize="20" Clicked="OpenAddExpensePopup"></Button>
+                    <Label Text="Harcama Ekle"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="#000000"></Label>
                 </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
-                    <Image Source="config.png">
-                    </Image>
-                    <Label Text="Ayarlar" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OpenSettings" NumberOfTapsRequired="1"/>
-                    </StackLayout.GestureRecognizers>
+            </Frame>
+            <Frame HeightRequest="10" BackgroundColor="{Binding BaseColor }" Margin="0"  >
+                <StackLayout Orientation="Horizontal" Padding="75,0" >
+                    <StackLayout  HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                        <Image Source="home.png" ></Image>
+                        <Label Text="Anasayfa" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenMainPage" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,-13,0,0">
+                        <Image Source="config.png"></Image>
+                        <Label Text="Ayarlar" Margin="0,-5,0,0" TextColor="#F1F1F1"></Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenSettings" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-        </Frame>
+            </Frame>
 
 
-    </StackLayout>
+        </StackLayout>
+
+    
+   
 
 
 </ContentPage>

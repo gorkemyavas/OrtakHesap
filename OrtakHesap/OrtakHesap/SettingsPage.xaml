@@ -26,9 +26,9 @@
             </Button>
         </StackLayout>
         <Label Text="Kişi Sayısı" TextColor="#000000" Margin="50,20,0,0"></Label>
-        <Entry Text="" Placeholder="Bölünecek Kişi Sayısı ..." Margin="50,20,50,0"></Entry>
+        <Entry Text="{Binding PersonCount}" Placeholder="Bölünecek Kişi Sayısı ..." Margin="50,20,50,0" x:Name="PersonCount"></Entry>
         <Button Text="Kaydet" BackgroundColor="{Binding BaseColor}" WidthRequest="200" HorizontalOptions="Center"
-                CornerRadius="50"
+                CornerRadius="50" Clicked="SaveButton"
                 Margin="0,15,0,0" TextColor="#FFFFFF">
         </Button>
 

@@ -13,6 +13,7 @@ namespace OrtakHesap
         {
             CurrentApp = Application.Current as App;
             InitializeComponent();
+
         }
 
         private void OpenMainPage(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace OrtakHesap
 
         private void ChangeBaseColor(object sender, EventArgs e)
         {
-            var baseColorViewModel = (Application.Current.MainPage.BindingContext as BaseColorViewModel);
+            var baseColorViewModel = (Application.Current.MainPage.BindingContext as AppSettingsViewModel);
             var hex = (sender as Button).BackgroundColor.ToHex().Remove(0, 3);
             switch (hex)
             {
@@ -57,6 +58,12 @@ namespace OrtakHesap
             }
 
 
+        }
+
+        private void SaveButton(object sender, EventArgs e)
+        {
+            CurrentApp.personCount = Convert.ToInt32(PersonCount.Text);
+            CurrentApp.UpdateApplication();
         }
     }
 }
