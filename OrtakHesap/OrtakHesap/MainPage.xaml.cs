@@ -81,6 +81,12 @@ namespace OrtakHesap
                     case ExpenseType.Market:
                         item.Image = "Basket.png";
                         break;
+                    case ExpenseType.Fatura:
+                        item.Image = "Bill.png";
+                        break;
+                    case ExpenseType.Diğer:
+                        item.Image = "Other.png";
+                        break;
                 }
             }
 
