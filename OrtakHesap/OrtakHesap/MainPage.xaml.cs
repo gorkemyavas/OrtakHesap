@@ -45,10 +45,6 @@ namespace OrtakHesap
         {
             CurrentApp.OpenSettingsPage();
         }
-        private void OpenToDoPage(object sender, EventArgs e)
-        {
-            CurrentApp.OpenToDoPage();
-        }
 
         private void OpenMainPage(object sender, EventArgs e)
         {

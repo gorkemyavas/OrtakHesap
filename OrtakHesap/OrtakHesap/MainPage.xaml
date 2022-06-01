@@ -7,9 +7,6 @@
              xmlns:ortakHesap="clr-namespace:OrtakHesap;assembly=OrtakHesap"
              xmlns:models="clr-namespace:OrtakHesap.Models;assembly=OrtakHesap">
 
-    <!--<ContentPage.BindingContext>
-        <ortakHesap:BaseColorViewModel></ortakHesap:BaseColorViewModel>
-    </ContentPage.BindingContext>-->
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <yummy:PancakeView WidthRequest="100"  BackgroundColor="{Binding BaseColor }" Padding="0,0,0,25" CornerRadius="0,0,50,50"
                            VerticalOptions="Start">
@@ -17,12 +14,6 @@
                 <StackLayout>
                     <Label Text="Ortak Hesap" Padding="40,45,0,0" TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold"></Label>
                     <StackLayout Orientation="Horizontal" Margin="0,15,0,0">
-                        <!--<Button Text="Harcamalar" Margin="40,0,0,0" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
-                            FontSize="12" FontAttributes="None" BackgroundColor="{Binding ThirdColor }" HorizontalOptions="Start">
-                        </Button>
-                        <Button Text="Yapılacaklar" Padding="15,0" HeightRequest="25" TextColor="#FFFFFF"
-                            FontSize="12" FontAttributes="None" BackgroundColor="{Binding BaseColor }" HorizontalOptions="Start" Clicked="OpenToDoPage">
-                        </Button>-->
                     </StackLayout>
                 </StackLayout>
             </yummy:PancakeView>
